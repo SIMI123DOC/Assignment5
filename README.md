@@ -1,4 +1,4 @@
-Retail Inventory Management System
+Retail Inventory Management System-SET 1
 
 About the Project
 This project is developed using MySQL to manage retail products, categories, suppliers, warehouses, and inventory stock details.
