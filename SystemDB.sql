@@ -1,0 +1,45 @@
+
+-- SET 1: RETAIL INVENTORY MANAGEMENT
+-- TASK 5: SYSTEM DATABASE EXPLORATION
+
+-- 1. DISPLAY DATABASES
+SHOW DATABASES;
+
+-- 2. INFORMATION_SCHEMA
+USE information_schema;
+SHOW TABLES;
+
+-- 3. MYSQL
+USE mysql;
+SHOW TABLES;
+
+-- 4. PERFORMANCE_SCHEMA
+USE performance_schema;
+SHOW TABLES;
+
+-- 5. SYS
+USE sys;
+SHOW TABLES;
+
+-- 6. TABLE NAME, ENGINE AND ROW COUNT
+SELECT
+    TABLE_NAME,
+    ENGINE,
+    TABLE_ROWS
+FROM information_schema.TABLES
+WHERE TABLE_SCHEMA = 'retail_inventory';
+
+-- 7. EXACT ROW COUNTS
+USE retail_inventory;
+
+SELECT 'Category' AS Table_Name, COUNT(*) AS Total_Rows
+FROM Category
+UNION ALL
+SELECT 'Supplier', COUNT(*) FROM Supplier
+UNION ALL
+SELECT 'Warehouse', COUNT(*) FROM Warehouse
+UNION ALL
+SELECT 'Product', COUNT(*) FROM Product
+UNION ALL
+SELECT 'Inventory', COUNT(*) FROM Inventory;
+
